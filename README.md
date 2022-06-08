@@ -17,4 +17,4 @@ Quick start guide:
 4) yarn start
 ```
 
-Look at the source code for more details <a href="https://github.com/startfellows/tonapi-oauth-demo/blob/master/src/App.tsx">details</a>
+Look at the source code for more <a href="https://github.com/startfellows/tonapi-oauth-demo/blob/master/src/App.tsx">details</a>
