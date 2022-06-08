@@ -3,11 +3,12 @@ import './App.css';
 import { useLocalStorage } from './hooks'
 import { getAuthDataFromUrl } from './utils'
 
-const TONAPI_OAUTH_LOGIN_URL = "https://tonapi.io/v1/oauth/login?returnUrl=http://localhost:3000/";
 
 function App() {
   const [wallet, setWallet] = useLocalStorage("wallet", null);
   const [clientId, setClientId] = useLocalStorage("clientId", null);
+
+  const TONAPI_OAUTH_LOGIN_URL = `https://tonapi.io/v1/oauth/login?returnUrl=${window.location.origin}`;
 
   useEffect(() => {
     const {
