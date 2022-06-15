@@ -1,38 +1,37 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  overflow: hidden;
 }
 
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
+  padding: 20px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.Token-container {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.Token-container span {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden; /* Обрезаем все, что не помещается в область */
+  padding-bottom: 20px;
+}
+
+.Token-container p {
+  overflow-wrap: break-word;
+  overflow: hidden;
 }
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

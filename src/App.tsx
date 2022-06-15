@@ -5,41 +5,54 @@ import { getAuthDataFromUrl } from './utils'
 
 
 function App() {
-  const [wallet, setWallet] = useLocalStorage("wallet", null);
-  const [clientId, setClientId] = useLocalStorage("clientId", null);
+  const [authToken, setAuthToken] = useLocalStorage("authToken", null);
 
-  const TONAPI_OAUTH_LOGIN_URL = `https://tonapi.io/v1/oauth/login?returnUrl=${window.location.origin}`;
+  const TONAPI_OAUTH_LOGIN_URL = `https://tonapi.io/login?returnUrl=${window.location.origin}`;
 
   useEffect(() => {
-    const {
-      wallet,
-      clientId,
-    } = getAuthDataFromUrl();
+    const query = getAuthDataFromUrl();
 
-    if (wallet) {
-      setWallet(wallet)
-    }
-
-    if (clientId) {
-      setClientId(clientId)
+    if (query.authToken) {
+      setAuthToken(query.authToken)
     }
   }, [])
 
 
+  const handleLogout = (e: { preventDefault: () => void; }) => {
+    e.preventDefault()
+
+    localStorage.removeItem("authToken")
+    window.location.href = window.location.origin
+  }
+
+
   return (
       <div className="App">
-        <header className="App-header">
+        <div className="App-header">
           {
-            wallet && clientId
+            authToken
                 ? (
-                    <p>
-                      Logined as: {wallet}
-                    </p>
+                    <div className="Token-container">
+                      <p>
+                        AuthToken is:
+                      </p>
+                      <span>
+                        {authToken}
+                      </span>
+                      <a
+                          onClick={handleLogout}
+                          className="App-link"
+                          href={""}
+                          rel="noopener noreferrer"
+                      >
+                        Logout
+                      </a>
+                    </div>
                 )
                 : (
                     <>
                       <p>
-                        Wallet is uknown, please login
+                        AuthToken is uknown, please login
                       </p>
                       <a
                           className="App-link"
@@ -51,7 +64,7 @@ function App() {
                     </>
                 )
           }
-        </header>
+        </div>
       </div>
   );
 }

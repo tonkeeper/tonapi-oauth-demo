@@ -6,12 +6,10 @@ const queryString = new Proxy(new URLSearchParams(window.location.search), {
 
 export const getAuthDataFromUrl = () => {
     // @ts-ignore
-    const address = queryString['address']
+    const authToken = queryString['authToken']
     // @ts-ignore
-    const clientId = queryString['clientId']
 
     return {
-        wallet: address,
-        clientId,
+        authToken,
     }
 }
