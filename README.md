@@ -13,9 +13,38 @@ tonapi.io/login?{params}
 One of the params **redirect_url** or **callback_url** must be passed. Please note that **authToken** wich you will get after authorization flow is **ONE TIME USE**, **SHORT LIVING** token wich should be exchanged to persistent token serverside via tonapi.io/v1/auth. Just receiving authToken is not a proof of successful user authorisation and can be possibly swapped or be stolen by attacker.
 
 In case of success the **callback_url** or **redirect_url** will be triggered with following GET params added:
-* **auth_token** – *string*, one-time-use token  
+* **success** – bookean, true in case if auth was successfully performed
+* **auth_token** – *[optional]* *string*, one-time-use token  
+* **error_code** – *[optional]* *string*, in case of success=false short text code of error
+* **error_text** – *[optional]* *string*, in case of success=false text human readable description of error
 
-### 2) 
+**Examples:**
+```JSON
+{
+    "success": true,
+    "auth_token": "abcd..."
+}
+```
+```JSON
+{
+    "success": false,
+    "error_code": "auth_rejected",
+    "error_text": "User canceled authorization"
+}
+```
+
+### 2) Fetching persistant token via tonapi.io/v1/auth method
+After successfully obtaining **auth_token** via process described below /auth method should be called from server side to check that the **auth_token** is valid.
+
+Authorization header must be passed to this method the same way as any other methods in tonapi.io API. Using token obtained in t.me/tonapi_bot telegram bot.
+
+Example header:
+```
+Authorisation: Bearer AuthTokenHere
+```
+
+Following params needed by this method:
+* **auth_token**, *string*, the token wich was returned by the method below
 
 
 ## OAuth demo
