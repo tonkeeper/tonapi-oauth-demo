@@ -49,7 +49,7 @@ Following params needed by this method:
 
 ## OAuth demo
 Simple auth demo using [tonapi.io](https://tonapi.io/), tonkeeper and oauth login flow with desktop and mobile support
-[View Demo](https://beta.stickerface.io/tonapi-oauth-demo/)
+[View Demo](https://tonapi-oauth.herokuapp.com/)
 Before you looking this demo read the definition of oauth [login flow](https://www.techtarget.com/searchapparchitecture/definition/OAuth) and go oauth [implementation](https://github.com/go-oauth2/oauth2)
 
 ***
