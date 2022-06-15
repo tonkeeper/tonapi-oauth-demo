@@ -9,6 +9,7 @@ function App() {
   const [authToken, setAuthToken] = useLocalStorage("authToken", null);
 
   const TONAPI_OAUTH_LOGIN_URL = `https://tonapi.io/login?returnUrl=${RETURN_URL}`;
+  const TONAPI_OAUTH_MOBILE_LOGIN_URL = `https://tonapi.io/login?isMobile=1&returnUrl=${RETURN_URL}`;
 
   useEffect(() => {
     const query = getAuthDataFromUrl();
@@ -60,7 +61,14 @@ function App() {
                           href={TONAPI_OAUTH_LOGIN_URL}
                           rel="noopener noreferrer"
                       >
-                        Login
+                        Desktop login
+                      </a>
+                      <a
+                          className="App-link"
+                          href={TONAPI_OAUTH_MOBILE_LOGIN_URL}
+                          rel="noopener noreferrer"
+                      >
+                        Mobile login
                       </a>
                     </>
                 )

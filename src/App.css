@@ -6,6 +6,7 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+  box-sizing: border-box;
   display: flex;
   padding: 20px;
   flex-direction: column;
@@ -34,4 +35,5 @@
 
 .App-link {
   color: #61dafb;
+  padding: 20px;
 }
