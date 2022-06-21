@@ -8,8 +8,8 @@ const RETURN_URL = 'https://beta.stickerface.io/tonapi-oauth-demo/'
 function App() {
   const [authToken, setAuthToken] = useLocalStorage("authToken", null);
 
-  const TONAPI_OAUTH_LOGIN_URL = `https://tonapi.io/login?returnUrl=${RETURN_URL}`;
-  const TONAPI_OAUTH_MOBILE_LOGIN_URL = `https://tonapi.io/login?isMobile=1&returnUrl=${RETURN_URL}`;
+  const TONAPI_OAUTH_LOGIN_URL = `https://tonapi.io/login?return_url=${RETURN_URL}`;
+  const TONAPI_OAUTH_MOBILE_LOGIN_URL = `https://tonapi.io/login?is_mobile=1&return_url=${RETURN_URL}`;
 
   useEffect(() => {
     const query = getAuthDataFromUrl();
