@@ -16,7 +16,7 @@ One of the params **redirect_url** or **callback_url** must be passed. Please no
 
 In case of success the **callback_url** or **redirect_url** will be triggered with following GET params added:
 * **success** – boolean, true in case if auth was successfully performed (not supported yet)
-* **auth_token** – *[optional]* *string*, one-time-use token
+* **auth_token** – *[optional]* *string*, one-time-use token  
 * **error_code** – *[optional]* *string*, in case of success=false short text code of error (not supported yet)
 * **error_text** – *[optional]* *string*, in case of success=false text human readable description of error (not supported yet)
 
@@ -45,7 +45,7 @@ Example header:
 Authorisation: Bearer AppTokenHere
 ```
 **Serverside auth header:**
-```javascript=
+```javascript
 var options = {
     host: 'tonapi.io',
     path: '/v1/nft/getCollections',
@@ -57,7 +57,7 @@ http.request(options, () => {}).end();
 ```
 
 **Clientside auth header:**
-```javascript=
+```javascript
 var options = {
     method: 'post', 
     headers: new Headers({
@@ -74,23 +74,6 @@ Following GET params needed by this method:
 * **auth_token**, *string*, the token wich was returned by the method below
 * **rate_limit**, *number*, request per seconds
 * **token_type**, *string [client, server]*, type of token which will be used to indicate the app
-
-**Examples:**
-```JSON
-{
-    "success": true,
-    "user_token": "abcd..."
-}
-```
-```JSON
-{
-    "success": false,
-    "error_code": "auth_rejected",
-    "error_text": "User canceled authorization"
-}
-```
-
-
 
 **Examples:**
 ```JSON
