@@ -92,6 +92,23 @@ Following GET params needed by this method:
 
 
 
+**Examples:**
+```JSON
+{
+    "success": true,
+    "user_token": "abcd..."
+}
+```
+```JSON
+{
+    "success": false,
+    "error_code": "auth_rejected",
+    "error_text": "User canceled authorization"
+}
+```
+
+
+
 
 ## OAuth demo
 Simple auth demo using [tonapi.io](https://tonapi.io/), tonkeeper and oauth login flow with desktop and mobile support
