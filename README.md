@@ -79,7 +79,11 @@ Following GET params needed by this method:
 ```JSON
 {
     "success": true,
-    "user_token": "abcd..."
+    "user_token": "abcd...",
+    "address": "EQrt...s7Ui",    
+    "pubkey": "Pub6...2k3y", // base64-encoded Ed25519 public key
+    "signature": "Gt562...g5s8D=", // base64-encoded ed25519 signature
+    "wallet_version": "v4R2", // supported values: "v3R1", "v3R2", "v4R1", "v4R2"
 }
 ```
 ```JSON
