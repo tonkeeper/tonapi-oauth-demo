@@ -94,6 +94,9 @@ Following GET params needed by this method:
 }
 ```
 
+## Decentralised proof of ownership
+It is possible to check proof of ownership, without fully relying in TONAPI. Here is the example of code needed to check signature and be sure that user have access to provided wallet.
+https://github.com/tonkeeper/ton-connect/blob/main/tonconnect-server/src/TonConnectServerV1.ts#L36
 
 
 
