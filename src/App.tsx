@@ -3,12 +3,12 @@ import './App.css';
 import { useLocalStorage } from './hooks'
 import { getAuthDataFromUrl } from './utils'
 
-const RETURN_URL = 'https://beta.stickerface.io/tonapi-oauth-demo/'
+const RETURN_URL = `${process.env.REACT_APP_RETURN_URL}`
 
 function App() {
   const [authToken, setAuthToken] = useLocalStorage("authToken", null);
 
-  const TONAPI_OAUTH_LOGIN_URL = `https://tonapi.io/login?return_url=${RETURN_URL}`;
+  const TONAPI_OAUTH_LOGIN_URL = `${process.env.REACT_APP_TONAPI_OAUTH_LOGIN_URL}=${RETURN_URL}`;
 
   useEffect(() => {
     const query = getAuthDataFromUrl();
