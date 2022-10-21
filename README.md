@@ -81,13 +81,13 @@ In case of success the **callback_url** or **redirect_url** will be triggered wi
 * **error_text** – *[optional]* *string*, in case of success=false text human readable description of error (not supported yet)
 
 **Examples:**
-```JSON
+```javascript
 {
     "success": true,
     "auth_token": "abcd..."
 }
 ```
-```JSON
+```javascript
 {
     "success": false,
     "error_code": "auth_rejected",
@@ -136,7 +136,7 @@ Following POST params needed by this method:
 * **token_type**, *string [client, server]*, type of token which will be used to indicate the app
 
 **Examples:**
-```JSON
+```javascript
 {
     "success": true,
     "user_token": "abcd...",
@@ -147,7 +147,7 @@ Following POST params needed by this method:
     "client_id": "abc"
 }
 ```
-```JSON
+```javascript
 {
     "success": false,
     "error_code": "auth_rejected",
@@ -164,7 +164,7 @@ https://github.com/tonkeeper/ton-connect/blob/main/tonconnect-server/src/TonConn
 ## OAuth demo
 Check out simple demo of Authroisation flow:
 
-[View Demo](https://tonapi-oauth.herokuapp.com/)
+[View Demo](https://beta.stickerface.io/tonapi-oauth-demo/)
 
 ***
 ```javascript
